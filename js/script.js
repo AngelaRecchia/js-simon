@@ -6,27 +6,28 @@ var n = 5;
 var numeri = geneRandom(1, 100, n);
 var nUtente = [];
 var time = 3;
-
 alert("Memorizza questi numeri: \r\n" + numeri);
 setTimeout(askNum, time*1000);
+var frase = "I numeri da ricordare erano: " + numeri;
 
 function askNum() {
+
     while (nUtente.length < n) {
         nUtente.push(parseInt(prompt("Inserisci numero")));
     }
 
+    frase += "<br>Numeri inseriti: " + nUtente + "<br>Numeri ricordati correttamente:";
     var guessed = 0;
-
-    document.getElementById("numeri").innerHTML = "I numeri da ricordare erano: " + numeri + "<br>Numeri inseriti: " + nUtente + "<br>Numeri ricordati correttamente:";
 
     for (var i = 0; i < numeri.length; i++) {
         if (numeri.includes(nUtente[i])) {
-        document.getElementById("numeri").innerHTML += " " + numeri[i];
+        frase += " " + numeri[i];
         guessed++;
         }
     }
 
-    document.getElementById("numeri").innerHTML += "<br>Hai individuato " + guessed + " numeri!";
+    frase += "<br>Hai individuato " + guessed + " numeri!";
+    document.getElementById("text").innerHTML = frase;
 }
 
 function geneRandom(min, max, n) {
