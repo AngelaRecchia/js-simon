@@ -15,11 +15,18 @@ function askNum() {
         nUtente.push(parseInt(prompt("Inserisci numero")));
     }
 
-    document.getElementById("numeri").innerHTML = "I numeri da ricordare erano: " + numeri + "<br>Numeri ricordati correttamente:";
+    var guessed = 0;
+
+    document.getElementById("numeri").innerHTML = "I numeri da ricordare erano: " + numeri + "<br>Numeri inseriti: " + nUtente + "<br>Numeri ricordati correttamente:";
 
     for (var i = 0; i < numeri.length; i++) {
-        if (numeri.includes(nUtente[i])) document.getElementById("numeri").innerHTML += " " + numeri[i];
+        if (numeri.includes(nUtente[i])) {
+        document.getElementById("numeri").innerHTML += " " + numeri[i];
+        guessed++;
+        }
     }
+
+    document.getElementById("numeri").innerHTML += "<br>Hai individuato " + guessed + " numeri!";
 }
 
 function geneRandom(min, max, n) {
