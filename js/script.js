@@ -11,9 +11,16 @@ setTimeout(askNum, time*1000);
 var frase = "I numeri da ricordare erano: " + numeri;
 
 function askNum() {
-
+    var ask = "Inserisci numero";
     while (nUtente.length < n) {
-        nUtente.push(parseInt(prompt("Inserisci numero")));
+        
+        var numUt = parseInt(prompt(ask));
+        if (!nUtente.includes(numUt)) {
+            nUtente.push(numUt);
+            ask = "Inserisci numero";
+        }
+        else ask = "Numero già inserito, inseriscine uno diverso";
+
     }
 
     frase += "<br>Numeri inseriti: " + nUtente + "<br>Numeri ricordati correttamente:";
@@ -31,9 +38,12 @@ function askNum() {
 }
 
 function geneRandom(min, max, n) {
+
     var arr = [];
+    
     while (arr.length < n) {
-        arr.push(Math.floor(Math.random() * (max - min) + min));
+        var numR = Math.floor(Math.random() * (max - min) + min);
+        if (!arr.includes(numR)) arr.push(numR);
     }
     return arr;
 }
