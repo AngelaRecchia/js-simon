@@ -1,0 +1,47 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Nixie;
+}
+
+@font-face {
+    font-family: Nixie;
+    src: url(NixieOne.ttf);
+}
+
+#text {
+    height: 100vh;
+    font-size: 25px;
+}
+
+.level {
+    text-transform: uppercase;
+    width: 150px;
+    margin: 30px 0;
+    padding: 10px 0px;
+    background-color: black;
+    color: white;
+    border: 5px solid transparent;
+    cursor: pointer;
+}
+
+.level:hover {
+    outline: black solid 3px;
+}
+
+#easy:hover {
+    border-color: yellowgreen;
+}
+
+#normal:hover {
+    border-color: rgba(255, 230, 0, 0.986);
+}
+
+#difficult:hover {
+    border-color: rgba(255, 0, 0, 0.726);
+}
+
+.hidden {
+    display: none;
+}

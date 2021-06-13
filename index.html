@@ -4,11 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <title>Simon Says</title>
 </head>
 <body>
     
-    <div id="text"></div>
+    <div id="text" class="d-flex flex-column align-items-center justify-content-center text-center">
+        <div id="cont">
+            <div id="easy" class="level" data-diff="3">easy</div>
+            <div id="normal" class="level" data-diff="5">normal</div>
+            <div id="difficult" class="level" data-diff="7">difficult</div>
+        </div>
+        <div id="result"></div>
+        <div id="riprova" class="hidden">riprova</div>
+    </div>
 
     <script src="js/script.js"></script>
 
